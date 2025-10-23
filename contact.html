@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ryan's Portfolio — Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    header, nav, main, section, form, footer { border:1px solid; }
+    fieldset, legend, label, input, textarea, button { border:1px solid; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ryan’s Portfolio</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h2>Contact</h2>
+
+    <section aria-labelledby="links">
+      <h3 id="links">Links</h3>
+      <ul>
+        <li><a href="mailto:ryankuang0618@gmail.com">Gmail</a></li>
+        <li><a href="https://www.linkedin.com/in/zih-huan-kuang-060331204/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/ryankuang0618" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="form">
+      <h3 id="form">Send a Message (static demo)</h3>
+      <form>
+        <fieldset>
+          <legend>Contact Form</legend>
+          <label for="name">Name</label><br>
+          <input id="name" name="name" type="text"><br>
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email"><br>
+          <label for="msg">Message</label><br>
+          <textarea id="msg" name="msg" rows="4" cols="30"></textarea><br>
+          <button type="submit">Send</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="map">
+      <h3 id="map">Map (iframe demo)</h3>
+      <iframe title="Map placeholder" width="300" height="200" src="about:blank"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 Ryan Kuang</small>
+  </footer>
+</body>
+</html>

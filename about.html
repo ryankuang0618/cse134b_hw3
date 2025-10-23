@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ryan's Portfolio — About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal portfolio of Ryan Kuang">
+  <link rel="author" href="mailto:ryankuang0618@gmail.com">
+  <style>
+    header, nav, main, section, article, footer, aside { border:1px solid; }
+  </style>
+  <script><!-- placeholder for analytics (no interaction) --></script>
+</head>
+<body>
+  <noscript>This site works without JavaScript.</noscript>
+
+  <header>
+    <h1>Ryan’s Portfolio</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="about.html" aria-current="page">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section aria-labelledby="intro">
+      <h2 id="intro">Introduction</h2>
+      <article>
+        <h3>About Me</h3>
+        <picture>
+          <source srcset="assets/images/profile.webp" type="image/webp">
+          <img src="assets/images/profile.jpg" alt="Portrait placeholder of Ryan" width="200" height="200">
+        </picture>
+        <p>
+          Hi! I’m <strong>Ryan Kuang</strong>, a computer engineering student at UC San Diego.
+          I enjoy building web systems and learning cloud services like Azure, AWS, and GCP.
+          I worked at <em>Meta</em> and <em>IBM</em>, and I like simple, clear, and useful projects.
+        </p>
+        <p>
+          This site shares my <a href="projects.html">projects</a>, work experiences, and ways to contact me.
+        </p>
+      </article>
+    </section>
+
+    <aside aria-label="Quick facts">
+      <h3>Quick Facts</h3>
+      <ul>
+        <li>Location: San Diego, CA</li>
+        <li>Focus: Full-stack & Cloud</li>
+        <li>Portfolio progress: <progress value="20" max="100">20%</progress></li>
+      </ul>
+    </aside>
+
+    <section aria-labelledby="featured">
+      <h2 id="featured">Featured Projects</h2>
+      <ul>
+        <li><a href="projects.html#p1">Smart Glasses</a></li>
+        <li><a href="projects.html#p2">Financial Audit System</a></li>
+        <li><a href="projects.html#p3">TritonTube</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      Contact: <a href="mailto:ryankuang0618@gmail.com">ryankuang0618@gmail.com</a>
+    </address>
+    <small>&copy; 2025 Ryan Kuang</small>
+  </footer>
+
+  <dialog id="note" aria-labelledby="note-title">
+    <h3 id="note-title">Note</h3>
+    <p>This dialog is here only to demonstrate the <code>&lt;dialog&gt;</code> element.</p>
+  </dialog>
+</body>
+</html>

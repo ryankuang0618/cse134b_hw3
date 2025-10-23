@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ryan's Portfolio — Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    header, nav, main, section, article, footer { border:1px solid; }
+    project-card { display:block; border:1px solid; padding:0.5rem; }
+  </style>
+  <script>
+    class HelloConsole extends HTMLElement { connectedCallback(){ console.log('Hello world!'); } }
+    customElements.define('hello-console', HelloConsole);
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Ryan’s Portfolio</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h2>Project Detail Page</h2>
+
+    <section aria-labelledby="filter">
+      <h3 id="filter">Find Project</h3>
+      <form role="search">
+        <label for="q">Enter Project Name</label>
+        <input id="q" name="q" type="search" placeholder="Search…">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="p1">
+      <h3 id="p1">Smart Glasses</h3>
+      <project-card>
+        <article>
+          <h4>Project Overview</h4>
+          <p>Wearable device with real-time image translation and navigation using Python and GCP.</p>
+          <ul>
+            <li>Tech: Python, Firebase</li>
+            <li>Role: Developer</li>
+          </ul>
+          <svg width="120" height="40" viewBox="0 0 120 40" aria-label="simple svg badge">
+            <rect x="1" y="1" width="118" height="38" stroke="black" fill="none"/>
+            <text x="10" y="25">Prototype</text>
+          </svg>
+        </article>
+      </project-card>
+    </section>
+
+    <section aria-labelledby="p2">
+      <h3 id="p2">Financial Audit System</h3>
+      <project-card>
+        <article>
+          <h4>Project Overview</h4>
+          <p>ASP.NET MVC app with Oracle SQL and Kendo UI, used in a bank environment.</p>
+          <ol>
+            <li>Backend services with C#</li>
+            <li>Responsive UI with Kendo UI</li>
+          </ol>
+        </article>
+      </project-card>
+    </section>
+
+    <section aria-labelledby="p3">
+      <h3 id="p3">TritonTube</h3>
+      <project-card>
+        <article>
+          <h4>Project Overview</h4>
+          <p>Distributed video storage using gRPC and consistent hashing.</p>
+        </article>
+      </project-card>
+    </section>
+
+    <hello-console></hello-console>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 Ryan Kuang</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,366 @@
+/* CSS Variables with fallbacks */
+:root {
+  /* Color palette */
+  --primary-color: #2563eb;
+  --primary-color-fallback: #0066cc;
+  --secondary-color: #64748b;
+  --accent-color: #f59e0b;
+  --background-color: #ffffff;
+  --background-color-fallback: #f8fafc;
+  --text-color: #1e293b;
+  --text-color-fallback: #334155;
+  --border-color: #e2e8f0;
+  
+  /* Typography */
+  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-fallback: 'Georgia', 'Times New Roman', serif;
+  --font-size-base: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-small: 0.875rem;
+  --line-height-base: 1.6;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Layout */
+  --container-max-width: 75rem;
+  --header-height: 4rem;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  
+  /* Animation */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* Import custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary, var(--font-family-fallback));
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color, var(--text-color-fallback));
+  background-color: var(--background-color, var(--background-color-fallback));
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color, var(--primary-color-fallback));
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: var(--spacing-xl);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--primary-color, var(--primary-color-fallback));
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  background-color: var(--border-color);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+/* Layout using CSS Grid and Flexbox */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary-color, var(--primary-color-fallback)), var(--secondary-color));
+  color: white;
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+h1 {
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 0;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+nav a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* About page specific layout */
+.about-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-base);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.quick-facts {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.quick-facts ul {
+  list-style: none;
+}
+
+.quick-facts li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.quick-facts li:last-child {
+  border-bottom: none;
+}
+
+/* Progress bar styling */
+progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--border-color);
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--primary-color, var(--primary-color-fallback)), var(--accent-color));
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  margin-top: auto;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: var(--spacing-sm);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Picture element optimization */
+picture {
+  display: block;
+  width: 100%;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-base);
+}
+
+picture:hover img {
+  transform: scale(1.02);
+}
+
+/* Dialog styling */
+dialog {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  background: white;
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  width: 90%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Dialog trigger button */
+.dialog-trigger {
+  background: var(--primary-color, var(--primary-color-fallback));
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  margin-top: var(--spacing-md);
+}
+
+.dialog-trigger:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* Dialog close button */
+.dialog-close {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  margin-top: var(--spacing-md);
+  float: right;
+}
+
+.dialog-close:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}

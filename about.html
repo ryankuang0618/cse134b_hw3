@@ -6,70 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Personal portfolio of Ryan Kuang">
   <link rel="author" href="mailto:ryankuang0618@gmail.com">
-  <style>
-    header, nav, main, section, article, footer, aside { border:1px solid; }
-  </style>
-  <script><!-- placeholder for analytics (no interaction) --></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <noscript>This site works without JavaScript.</noscript>
 
   <header>
-    <h1>Ryan’s Portfolio</h1>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="about.html" aria-current="page">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <div class="header-content">
+        <h1>Ryan's Portfolio</h1>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="about.html" aria-current="page">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main id="content">
-    <section aria-labelledby="intro">
-      <h2 id="intro">Introduction</h2>
-      <article>
-        <h3>About Me</h3>
-        <picture>
-          <source srcset="assets/images/profile.webp" type="image/webp">
-          <img src="assets/images/profile.jpg" alt="Portrait placeholder of Ryan" width="200" height="200">
-        </picture>
-        <p>
-          Hi! I’m <strong>Ryan Kuang</strong>, a computer engineering student at UC San Diego.
-          I enjoy building web systems and learning cloud services like Azure, AWS, and GCP.
-          I worked at <em>Meta</em> and <em>IBM</em>, and I like simple, clear, and useful projects.
-        </p>
-        <p>
-          This site shares my <a href="projects.html">projects</a>, work experiences, and ways to contact me.
-        </p>
-      </article>
-    </section>
+    <div class="container">
+      <div class="about-layout">
+        <div class="intro-section">
+          <section aria-labelledby="intro" class="fade-in">
+            <h2 id="intro">Introduction</h2>
+            <article>
+              <h3>About Me</h3>
+              <picture>
+                <source srcset="assets/images/profile.webp" type="image/webp">
+                <img src="assets/images/profile.jpg" alt="Portrait placeholder of Ryan" class="profile-image">
+              </picture>
+              <p>
+                Hi! I'm <strong>Ryan Kuang</strong>, a computer engineering student at UC San Diego.
+                I enjoy building web systems and learning cloud services like Azure, AWS, and GCP.
+                I worked at <em>Meta</em> and <em>IBM</em>, and I like simple, clear, and useful projects.
+              </p>
+              <p>
+                This site shares my <a href="projects.html">projects</a>, work experiences, and ways to contact me.
+              </p>
+            </article>
+          </section>
 
-    <aside aria-label="Quick facts">
-      <h3>Quick Facts</h3>
-      <ul>
-        <li>Location: San Diego, CA</li>
-        <li>Focus: Full-stack & Cloud</li>
-        <li>Portfolio progress: <progress value="20" max="100">20%</progress></li>
-      </ul>
-    </aside>
+          <section aria-labelledby="featured" class="fade-in">
+            <h2 id="featured">Featured Projects</h2>
+            <ul>
+              <li><a href="projects.html#p1">Smart Glasses</a></li>
+              <li><a href="projects.html#p2">Financial Audit System</a></li>
+              <li><a href="projects.html#p3">TritonTube</a></li>
+            </ul>
+          </section>
+        </div>
 
-    <section aria-labelledby="featured">
-      <h2 id="featured">Featured Projects</h2>
-      <ul>
-        <li><a href="projects.html#p1">Smart Glasses</a></li>
-        <li><a href="projects.html#p2">Financial Audit System</a></li>
-        <li><a href="projects.html#p3">TritonTube</a></li>
-      </ul>
-    </section>
+        <aside aria-label="Quick facts" class="quick-facts fade-in">
+          <h3>Quick Facts</h3>
+          <ul>
+            <li>Location: San Diego, CA</li>
+            <li>Focus: Full-stack & Cloud</li>
+            <li>Portfolio progress: <progress value="40" max="100">40%</progress></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <address>
-      Contact: <a href="mailto:ryankuang0618@gmail.com">ryankuang0618@gmail.com</a>
-    </address>
-    <small>&copy; 2025 Ryan Kuang</small>
+    <div class="container">
+      <address>
+        Contact: <a href="mailto:ryankuang0618@gmail.com">ryankuang0618@gmail.com</a>
+      </address>
+      <small>&copy; 2025 Ryan Kuang</small>
+    </div>
   </footer>
 
   <dialog id="note" aria-labelledby="note-title">

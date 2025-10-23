@@ -364,3 +364,126 @@ dialog::backdrop {
   background: #475569;
   transform: translateY(-2px);
 }
+
+/* Project cards using CSS Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+  }
+  
+  project-card {
+    display: block;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color, var(--primary-color-fallback)), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+  }
+  
+  project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  project-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Contact form styling */
+  .contact-form {
+    display: grid;
+    gap: var(--spacing-md);
+    max-width: 600px;
+  }
+  fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: border-color var(--transition-base);
+  }
+  
+  fieldset:focus-within {
+    border-color: var(--primary-color, var(--primary-color-fallback));
+  }
+  
+  legend {
+    font-weight: 600;
+    padding: 0 var(--spacing-sm);
+    color: var(--primary-color, var(--primary-color-fallback));
+  }
+  
+  label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: inherit;
+    transition: all var(--transition-base);
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color, var(--primary-color-fallback));
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  button {
+    background: linear-gradient(135deg, var(--primary-color, var(--primary-color-fallback)), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-slow);
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  
+  button:hover::before {
+    left: 100%;
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }

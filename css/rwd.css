@@ -1,0 +1,175 @@
+
+/* ≤ 768px (mobile / small tablets) */
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .social-link {
+    flex-direction: row;
+    min-width: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-icon-wrapper {
+    margin-bottom: 0;
+    margin-right: var(--spacing-md);
+  }
+
+  .contact-section {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* ≤ 480px (small phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  nav a {
+    text-align: center;
+    padding: var(--spacing-sm);
+  }
+
+  h1 { font-size: 1.5rem; }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .contact-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .social-links {
+    gap: var(--spacing-md);
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* 769px–1024px (tablets / small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ≥ 1025px (desktops) */
+@media (min-width: 1025px) {
+  .content-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Touch-friendly styles */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  nav a {
+    padding: var(--spacing-md);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-color: #000000;
+    --background-color: #ffffff;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0f172a;
+    --background-color-fallback: #1e293b;
+    --text-color: #f1f5f9;
+    --text-color-fallback: #e2e8f0;
+    --border-color: #334155;
+  }
+
+  project-card { background: #1e293b; border-color: #334155; }
+  fieldset { border-color: #334155; }
+  input, textarea {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+
+  dialog {
+    background: #1e293b;
+    border-color: #334155;
+  }
+}

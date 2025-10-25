@@ -43,7 +43,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 
-
 /* Reset and base styles */
 * {
   box-sizing: border-box;
@@ -487,3 +486,42 @@ dialog::backdrop {
   button:active {
     transform: translateY(0);
   }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  th {
+    background: linear-gradient(135deg, var(--primary-color, var(--primary-color-fallback)), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+  }
+  
+  tr:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+  }
+
+  @media (min-width: 1025px) {
+    .content-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}

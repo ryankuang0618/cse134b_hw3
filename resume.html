@@ -4,69 +4,77 @@
   <meta charset="utf-8">
   <title>Ryan's Portfolio — Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    header, nav, main, section, article, footer, table, thead, tbody, tr, th, td, caption { border:1px solid; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Ryan’s Portfolio</h1>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html" aria-current="page">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <header-content>
+        <h1>Ryan's Portfolio</h1>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html" aria-current="page">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header-content>
+    </div>
   </header>
 
   <main id="content">
-    <h2>Resume</h2>
+    <div class="container">
+      <h2 class="fade-in">Resume</h2>
 
-    <section aria-labelledby="edu">
-      <h3 id="edu">Education</h3>
-      <dl>
-        <dt>M.S., Computer Engineering — UC San Diego</dt>
-        <dd>Courses: Web Development, Cloud Computing, ML for Applications</dd>
-      </dl>
-    </section>
+      <div class="content-grid">
+        <section aria-labelledby="edu" class="fade-in">
+          <h3 id="edu">Education</h3>
+          <dl>
+            <dt>M.S., Computer Engineering — UC San Diego</dt>
+            <dd>Courses: Web Development, Cloud Computing, ML for Applications</dd>
+          </dl>
+        </section>
 
-    <section aria-labelledby="skills">
-      <h3 id="skills">Technical Skills</h3>
-      <table>
-        <caption>Skills Overview</caption>
-        <thead>
-          <tr><th>Area</th><th>Details</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Languages</td><td>Java, JavaScript, C#, Python, SQL</td></tr>
-          <tr><td>Web</td><td>React, ASP.NET MVC, Spring Boot, HTML/CSS</td></tr>
-          <tr><td>Cloud</td><td>Azure, AWS, GCP</td></tr>
-        </tbody>
-      </table>
-    </section>
+        <section aria-labelledby="skills" class="fade-in">
+          <h3 id="skills">Technical Skills</h3>
+          <table>
+            <caption>Skills Overview</caption>
+            <thead>
+              <tr><th>Area</th><th>Details</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Languages</td><td>Java, JavaScript, C#, Python, SQL</td></tr>
+              <tr><td>Web</td><td>React, ASP.NET MVC, Spring Boot, HTML/CSS</td></tr>
+              <tr><td>Cloud</td><td>Azure, AWS, GCP</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-    <section aria-labelledby="work">
-      <h3 id="work">Work Experience</h3>
-      <article>
-        <h4>Meta — Software Engineering Intern</h4>
-        <p>Improved internal tools and reduced redundant GraphQL queries.</p>
-      </article>
-      <article>
-        <h4>IBM Taiwan — Application Developer</h4>
-        <p>Built RESTful APIs using DDD and improved system monitoring.</p>
-      </article>
-    </section>
+        <section aria-labelledby="work" class="fade-in">
+          <h3 id="work">Work Experience</h3>
+          <article>
+            <h4>Meta — Software Engineering Intern</h4>
+            <p>Improved internal tools and reduced redundant GraphQL queries.</p>
+          </article>
+          <article>
+            <h4>IBM Taiwan — Application Developer</h4>
+            <p>Built RESTful APIs using DDD and improved system monitoring.</p>
+          </article>
+        </section>
 
-    <section aria-labelledby="download">
-      <h3 id="download">Download</h3>
-      <p><a href="assets/resume.pdf">View PDF Resume</a></p>
-    </section>
+        <section aria-labelledby="download" class="fade-in">
+          <h3 id="download">Download</h3>
+          <p><a href="assets/resume.pdf">View PDF Resume</a></p>
+        </section>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <small>&copy; 2025 Ryan Kuang</small>
+    <div class="container">
+      <small>&copy; 2025 Ryan Kuang</small>
+    </div>
   </footer>
 </body>
 </html>

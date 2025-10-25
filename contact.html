@@ -4,60 +4,97 @@
   <meta charset="utf-8">
   <title>Ryan's Portfolio — Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    header, nav, main, section, form, footer { border:1px solid; }
-    fieldset, legend, label, input, textarea, button { border:1px solid; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Ryan’s Portfolio</h1>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <header-content>
+        <h1>Ryan's Portfolio</h1>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </nav>
+      </header-content>
+    </div>
   </header>
 
   <main id="content">
-    <h2>Contact</h2>
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="fade-in">Contact</h2>
+        <p class="contact-subtitle fade-in">Get in touch with me through the links below or send me a message</p>
+      </div>
 
-    <section aria-labelledby="links">
-      <h3 id="links">Links</h3>
-      <ul>
-        <li><a href="mailto:ryankuang0618@gmail.com">Gmail</a></li>
-        <li><a href="https://www.linkedin.com/in/zih-huan-kuang-060331204/" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/ryankuang0618" rel="noopener">GitHub</a></li>
-      </ul>
-    </section>
+      <div class="content-grid">
+        <section aria-labelledby="links" class="fade-in contact-section">
+          <div class="section-header">
+            <h3 id="links">Links</h3>
+            <p class="section-description">Connect with me on social media</p>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ryankuang0618@gmail.com" class="social-link" title="Send me an email">
+              <div class="social-icon-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" class="social-icon">
+              </div>
+              <span class="social-label">Gmail</span>
+            </a>
+            <a href="https://www.linkedin.com/in/zih-huan-kuang-060331204/" rel="noopener" class="social-link" title="Visit my LinkedIn profile">
+              <div class="social-icon-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-icon">
+              </div>
+              <span class="social-label">LinkedIn</span>
+            </a>
+            <a href="https://github.com/ryankuang0618" rel="noopener" class="social-link" title="View my GitHub profile">
+              <div class="social-icon-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="social-icon">
+              </div>
+              <span class="social-label">GitHub</span>
+            </a>
+          </div>
+        </section>
 
-    <section aria-labelledby="form">
-      <h3 id="form">Send a Message (static demo)</h3>
-      <form>
-        <fieldset>
-          <legend>Contact Form</legend>
-          <label for="name">Name</label><br>
-          <input id="name" name="name" type="text"><br>
-          <label for="email">Email</label><br>
-          <input id="email" name="email" type="email"><br>
-          <label for="msg">Message</label><br>
-          <textarea id="msg" name="msg" rows="4" cols="30"></textarea><br>
-          <button type="submit">Send</button>
-        </fieldset>
-      </form>
-    </section>
-
-    <section aria-labelledby="map">
-      <h3 id="map">Map (iframe demo)</h3>
-      <iframe title="Map placeholder" width="300" height="200" src="about:blank"></iframe>
-    </section>
+        <section aria-labelledby="form" class="fade-in contact-section">
+          <div class="section-header">
+            <h3 id="form">Send a Message</h3>
+            <p class="section-description">Drop me a line and I'll get back to you</p>
+          </div>
+          <form class="contact-form">
+            <fieldset>
+              <legend class="sr-only">Contact Form</legend>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="your.email@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="msg">Message</label>
+                <textarea id="msg" name="msg" rows="4" placeholder="Tell me about your project or just say hello!" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                </svg>
+              </button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <small>&copy; 2025 Ryan Kuang</small>
+    <div class="container">
+      <small>&copy; 2025 Ryan Kuang</small>
+    </div>
   </footer>
 </body>
 </html>

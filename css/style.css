@@ -137,7 +137,7 @@ header {
   z-index: 100;
 }
 
-.header-content {
+header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -185,14 +185,14 @@ main {
 }
 
 /* About page specific layout */
-.about-layout {
+about-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--spacing-xl);
   align-items: start;
 }
 
-.intro-section {
+intro-section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
@@ -365,8 +365,8 @@ dialog::backdrop {
   transform: translateY(-2px);
 }
 
-/* Project cards using CSS Grid */
-.projects-grid {
+  /* Project cards using CSS Grid */
+  projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-lg);

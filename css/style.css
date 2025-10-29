@@ -40,7 +40,14 @@
 }
 
 /* Import custom fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Inter Variable'), local('InterVariable'), local('Inter'),
+       url('../assets/fonts/InterVariable.woff2') format('woff2');
+}
 @import url('css/rwd.css');
 @import url('css/print.css');
 

@@ -8,13 +8,60 @@
   }
 
   .header-content {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  nav ul {
-    justify-content: center;
-    gap: var(--spacing-md);
+  /* Hamburger menu styles for mobile - Using CSS Nesting */
+  nav {
+    position: relative;
+    
+    .hamburger {
+      display: flex;
+      position: relative;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: var(--header-height);
+      flex-direction: column;
+      background: linear-gradient(135deg, var(--primary-color, var(--primary-color-fallback)), var(--secondary-color));
+      width: 100%;
+      text-align: center;
+      transition: left 0.3s ease-in-out;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      padding: var(--spacing-lg) 0;
+      gap: 0;
+      z-index: 99;
+    }
+    
+    .nav-toggle:checked ~ .nav-menu {
+      left: 0;
+    }
+    
+    .nav-toggle:checked ~ .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle:checked ~ .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .nav-toggle:checked ~ .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    a {
+      display: block;
+      padding: var(--spacing-md);
+      border-radius: 0;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
   }
 
   .about-layout {
@@ -61,14 +108,10 @@
     padding: 0 var(--spacing-sm);
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  nav a {
-    text-align: center;
-    padding: var(--spacing-sm);
+  nav {
+    .nav-menu {
+      top: calc(var(--header-height) + 0.5rem);
+    }
   }
 
   h1 { font-size: 1.5rem; }

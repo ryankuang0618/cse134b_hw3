@@ -42,8 +42,25 @@
             <article>
               <h3>About Me</h3>
               <picture>
-                <source srcset="assets/images/profile.webp" type="image/webp">
-                <img src="assets/images/profile.jpg" alt="Portrait placeholder of Ryan" class="profile-image">
+                <source 
+                  srcset="assets/images/profile.webp 800w, 
+                          assets/images/profile.webp 400w"
+                  sizes="(max-width: 480px) 120px, 
+                         (max-width: 768px) 150px, 
+                         200px"
+                  type="image/webp">
+                <source 
+                  srcset="assets/images/profile.jpg 800w, 
+                          assets/images/profile.jpg 400w"
+                  sizes="(max-width: 480px) 120px, 
+                         (max-width: 768px) 150px, 
+                         200px">
+                <img src="assets/images/profile.jpg" 
+                     alt="Portrait of Ryan Kuang, computer engineering student" 
+                     class="profile-image"
+                     loading="lazy"
+                     width="200"
+                     height="200">
               </picture>
               <p>
                 Hi! I'm <strong>Ryan Kuang</strong>, a computer engineering student at UC San Diego.

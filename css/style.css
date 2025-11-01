@@ -54,6 +54,10 @@
  * BASELINE 2024 FEATURE: CSS Nesting
  * CSS Nesting allows developers to nest CSS selectors within parent rules, mirroring the HTML structure
  * and improving code maintainability. 
+ * 
+ * EXTRA CREDIT FEATURES:
+ * - color-mix(): Used in header background gradient and link hover states to blend colors dynamically
+ * - :has() selector: Used in project-card and fieldset elements to style based on contained elements
  */
 
 /* Reset and base styles */
@@ -111,7 +115,8 @@ a {
 }
 
 a:hover {
-  color: var(--accent-color);
+  /* Using color-mix() for extra credit - creates a lighter blend on hover */
+  color: color-mix(in srgb, var(--primary-color, var(--primary-color-fallback)) 70%, white 30%);
   text-decoration: underline;
 }
 
@@ -140,7 +145,10 @@ code {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--primary-color, var(--primary-color-fallback)), var(--secondary-color));
+  /* Using color-mix() for extra credit - blends primary and secondary colors */
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--primary-color, var(--primary-color-fallback)) 85%, var(--secondary-color) 15%),
+    color-mix(in srgb, var(--secondary-color) 85%, var(--primary-color, var(--primary-color-fallback)) 15%));
   color: white;
   padding: var(--spacing-md) 0;
   box-shadow: var(--box-shadow);
@@ -204,6 +212,13 @@ nav {
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+  }
+  
+  /* Using :has() selector for extra credit - styles nav when it contains current page link */
+  &:has([aria-current="page"]) {
+    .nav-menu {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
   }
   
   /* Navigation links using nested CSS */
@@ -452,6 +467,17 @@ dialog::backdrop {
         transform: scaleX(1);
       }
     }
+    
+    /* Using :has() selector for extra credit - styles cards that contain lists */
+    &:has(ul, ol) {
+      padding-bottom: var(--spacing-xl);
+    }
+    
+    /* Using :has() selector - enhanced styling for cards with multiple paragraphs */
+    &:has(p + p) article {
+      border-left: 3px solid var(--accent-color);
+      padding-left: var(--spacing-md);
+    }
   }
   
   /* Contact form styling */
@@ -678,6 +704,17 @@ dialog::backdrop {
     
     &:focus-within {
       border-color: var(--primary-color, var(--primary-color-fallback));
+    }
+    
+    /* Using :has() selector for extra credit - styles fieldset when it contains focused input */
+    &:has(input:focus, textarea:focus) {
+      border-color: var(--primary-color, var(--primary-color-fallback));
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    /* Using :has() selector - styles fieldset differently when submit button is present */
+    &:has(.submit-btn) {
+      padding-bottom: var(--spacing-xl);
     }
   }
   
